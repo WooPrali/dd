@@ -13,14 +13,14 @@
   <body>
     <script>
       // Default setting for the startCounter field
-      Wix.Data.Public.set("startCounter", 1234, { scope: 'COMPONENT' },
+      Wix.Data.Public.set("startCounter", 1234, { scope: 'APP' },
           function(d){ console.log(d) }, function(f) { console.log(f) }
       );
       // Once the user changes it to zero, set a new value for this key
-      Wix.Data.Public.set("startCounter", 0, { scope: 'COMPONENT' },
+      Wix.Data.Public.set("startCounter", 0, { scope: 'APP' },
           function(d) { console.log(d) }, function(f) { console.log(f) }
       );
-      Wix.Data.Public.get("startCounter", { scope: 'COMPONENT' }, function(d){console.log(d)}, function(f){console.log(f)});
+      Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d)}, function(f){console.log(f)});
       console.log(Wix);
     </script>
     FASTY
