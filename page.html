@@ -15,6 +15,15 @@
           Wix.addEventListener(Wix.Events.EDIT_MODE_CHANGE, function(event)  {
               console.log("Edit mode changed to " + event.editMode);
           })
+        // Default setting for the startCounter field
+        Wix.Data.Public.set("startCounter", 1234, { scope: 'COMPONENT' },
+            function(d){ console.log(d) }, function(f) { console.log(f) }
+        );
+        // Once the user changes it to zero, set a new value for this key
+        Wix.Data.Public.set("startCounter", 0, { scope: 'COMPONENT' },
+            function(d) { console.log(d) }, function(f) { console.log(f) }
+        );
+        Wix.Data.Public.get("startCounter", { scope: 'COMPONENT' }, function(d){console.log(d)}, function(f){console.log(f)});
       });
     </script>
     FASTY
