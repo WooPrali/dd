@@ -8,18 +8,12 @@
 <script src="//static.parastorage.com/services/third-party/lodash/4.17.2/lodash.js"></script>
 <script src="//static.parastorage.com/services/js-sdk/1.102.0/js/wix.min.js"></script>
 <script src="//static.parastorage.com/services/editor-ui-lib/1.28.0/lib/editor-ui-lib-jquery.min.js"></script>
+    
   </head>
   <body>
-    //Add the UI.ctrlName to declare the controller for the UI control
-<div>
-    <UI.checkbox
-        //add the options as properties
-        label="Show title"
-        defaultValue={true}
-        onChange= {(newVal)=>console.log(newVal)}>
-        //When supported, save the value inside the Wix site
-        wix-param="show_title"
-    </UI.checkbox>
-</div>
+    <script>
+      Wix.Data.Public.get("startCounter", { scope: 'COMPONENT' }, function(d){console.log(d)}, function(f){console.log(f)});
+     // console.log(window.);
+    </script>
   </body>
 </html>
