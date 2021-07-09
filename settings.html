@@ -16,7 +16,15 @@
 
     <!--Buttons settings tab-->
 
-    <div tab="ButtonsSettings">
+    <div tab="Buttons Settings">
+        <hr class="divider-long"/>
+
+        <div wix-ctrl="SectionDividerLabeled"
+             wix-options="{label: 'Button Settings'}">
+        </div>
+
+        <hr class="divider-long"/>
+
         <div class="business_ID"
              wix-ctrl="Input"
              wix-options="{
@@ -43,128 +51,16 @@
                     validateOnBlurOnly: true,
                     invalidMessage: 'Invalid Button Text'
                 }"
-        ></div>
-
-        <hr class="divider-long"/>
-
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Enable functionality'}">
-        </div>
-
-        <hr class="divider-long"/>
-
-        <div>
-            <div class="settings_allowEditing"
-                 wix-ctrl="ToggleSwitch"
-                 wix-param="editingToggle"
-                 wix-options="{
-                        label: 'Allow editing',
-                        defaultValue: true
-                    }"
-            ></div>
-        </div>
-
-        <hr class="divider-long"/>
-
-        <div>
-            <div class="settings_allowDeleting"
-                 wix-ctrl="ToggleSwitch"
-                 wix-param="deletingToggle"
-                 wix-options="{
-                        label: 'Allow deleting',
-                        defaultValue: true
-                    }"
-            ></div>
-        </div>
-
-        <hr class="divider-long"/>
-
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Display info'}">
-        </div>
-
-        <hr class="divider-long"/>
-
-        <div>
-            <div class="settings_displayName"
-                 wix-ctrl="Checkbox"
-                 wix-param="nameCheckbox"
-                 wix-options="{
-                        label: 'Name',
-                        defaultValue: false
-                    }"
-            ></div>
-        </div>
-
-        <div>
-            <div class="settings_displayTitle"
-                 wix-ctrl="Checkbox"
-                 wix-param="titleCheckbox"
-                 wix-options="{
-                        label: 'Title',
-                        defaultValue: true
-                    }"
-            ></div>
-        </div>
-
-        <div>
-            <div class="settings_displayDescription"
-                 wix-ctrl="Checkbox"
-                 wix-param="dscCheckbox"
-                 wix-options="{
-                        label: 'Description',
-                        defaultValue: true
-                    }"
-            ></div>
-        </div>
-
-        <hr class="divider-long"/>
-
-        <div id= "radio" class="settings_taxOnImage"
-             wix-ctrl="RadioButtons"
-             wix-param="radioBtns"
-             wix-options="{
-                    title: 'Do images show text?',
-                    defaultValue: 'both',
-                    options: [
-                        { value: '1', label: 'A title and a description', disabled: true,},
-                        { value: '2', label: 'Just a title'},
-                        { value: '3', label: 'Just a description'}
-                    ]
-                }"
-        ></div>
-
-
-        <hr class="divider-long"/>
-
-        <div class="settings_textFieldContent"
-             wix-ctrl="Input"
-             wix-options="{
-                    title: 'Text field',
-                    defaultText: 'Title'
-                }"
-        ></div>
-
-        <hr class="divider-long"/>
-
-        <div class="settings_textAreaContent"
-             wix-ctrl="Input"
-             wix-options="{
-                    title: 'Text area',
-                    focus: true,
-                    defaultText: 'Paragraph',
-                    isMultiLine: true
-                }"
-        ></div>
+        ></div>        
     </div>
 
-    <!--layout tab-->
+    <!--Advanced Settings tab-->
 
     <div tab="Layout">
         <hr class="divider-long"/>
 
         <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'How does this gallery look?'}">
+             wix-options="{label: 'Advanced Settings'}">
         </div>
 
         <hr class="divider-long"/>
