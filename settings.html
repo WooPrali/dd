@@ -56,12 +56,27 @@
 
     <!--Advanced Settings tab-->
 
-    <div tab="Layout">
+    <div tab="Advanced Settings">
         <hr class="divider-long"/>
 
         <div wix-ctrl="SectionDividerLabeled"
              wix-options="{label: 'Advanced Settings'}">
         </div>
+
+        <hr class="divider-long"/>       
+
+        <div class="button_position"
+             wix-ctrl="DropDown"
+             wix-options="{
+                    title: 'Button Position',
+                    defaultValue: '0',
+                    options: [
+                        { value: '0', label: 'Select Position'},
+                        { value: 'top', label: ' Top'},
+                        { value: 'bottom', label: ' Bottom'},                        
+                    ]
+                }"
+        ></div>
 
         <hr class="divider-long"/>
 
