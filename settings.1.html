@@ -14,34 +14,54 @@
 <div wix-ctrl="appSettings"></div>
 <div wix-ctrl="panelTabs" wix-options="{defaultTabIndex:0}">
 
-    <!--Buttons settings tab-->
+    <!--main tab-->
 
-    <div tab="ButtonsSettings">
-        <div class="business_ID"
-             wix-ctrl="Input"
+    <div tab="Main" class="main-tab">
+        <img class="app-logo" src="src/settings/svg/logo.svg" alt="app logo"/>
+        <p class="app-description">
+            This is the Wix App settings demo.<br/>
+            Please add a short description of your App + CTA for the main action.
+        </p>
+
+        <div class="main-cta-button"
+             wix-ctrl="Button"
              wix-options="{
-                    title: 'Business ID',
-                    placeholder: 'enter business id',
-                    validateOnBlurOnly: true,
-                    invalidMessage: 'Invalid Business ID'
+                    label: 'Main CTA',
+                    className: 'btn-confirm-primary'
                 }"
+             id="main-cta"
         ></div>
-        <div class="anchor_business_ID"
-             wix-ctrl="Input"
+
+        <div class="main-bottom">
+          <hr class="divider-long"/>
+          <p>
+            Upgrade now to get more features and enjoy everything our app has to offer!
+          </p>
+          <div wix-ctrl="Button"
+               wix-options="{
+                      label: 'Upgrade Now',
+                      className: 'btn-upgrade-banner'
+
+                  }"
+                onClick="Wix.Settings.openBillingPage()"
+          ></div>
+      </div>
+    </div>
+
+    <!--settings tab-->
+
+    <div tab="Settings">
+        <div class="settings_onImageClick"
+             wix-ctrl="DropDown"
+             wix-param="dropdown"
              wix-options="{
-                    title: 'Anchor Store ID',
-                    placeholder: 'enter anchor store id',
-                    validateOnBlurOnly: true,
-                    invalidMessage: 'Invalid Anchor Store ID'
-                }"
-        ></div>
-        <div class="button_text"
-             wix-ctrl="Input"
-             wix-options="{
-                    title: 'Buton Text',
-                    placeholder: 'enter button text',
-                    validateOnBlurOnly: true,
-                    invalidMessage: 'Invalid Button Text'
+                    title: 'When image is clicked',
+                    defaultValue: '0',
+                    options: [
+                        { value: '0', label: 'Enter expand mode'},
+                        { value: '1', label: 'Show on full screen'},
+                        { value: '2', label: 'Do nothing'}
+                    ]
                 }"
         ></div>
 
