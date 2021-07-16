@@ -9,7 +9,7 @@
     <script src="//static.parastorage.com/services/third-party/lodash/4.17.2/lodash.js"></script>
     <script src="//static.parastorage.com/services/js-sdk/1.425.0/js/wix.min.js"></script>
     <script src="//static.parastorage.com/services/editor-ui-lib/1.28.0/lib/editor-ui-lib-jquery.min.js"></script>
-    <link rel="stylesheet" href="settings.css" type="text/css" /> 
+    <link rel="stylesheet" href="settings.css?v=2" type="text/css" /> 
 </head>
 <body>
 <div wix-ctrl="appSettings"></div>
@@ -17,7 +17,7 @@
 
     <!--Buttons settings tab-->
 
-    <div tab="Buttons Settings">
+    <div tab="Main">
         <hr class="divider-long"/>
 
         <div wix-ctrl="SectionDividerLabeled"
@@ -62,93 +62,91 @@
 
         <hr class="divider-long"/>
 
+        <div class="advanced_settings">
+            <hr class="divider-long"/>
 
-    </div>
+            <div wix-ctrl="SectionDividerLabeled"
+                wix-options="{label: 'Advanced Settings'}">
+            </div>
 
-    <!--Advanced Settings tab-->
+            <hr class="divider-long"/>       
 
-    <div tab="Advanced Settings">
-        <hr class="divider-long"/>
+            <div class="button_position"
+                wix-ctrl="DropDown"
+                wix-options="{
+                        title: 'Button Position',
+                        defaultValue: '0',
+                        options: [
+                            { value: '0', label: 'Select Position'},
+                            { value: 'top', label: ' Top'},
+                            { value: 'bottom', label: ' Bottom'},                        
+                        ]
+                    }"
+            ></div>
 
-        <div wix-ctrl="SectionDividerLabeled"
-             wix-options="{label: 'Advanced Settings'}">
+            <hr class="divider-long"/>
+
+            <div wix-param="_buttonBackgroundColor"
+                wix-ctrl="ColorPickerSlider"
+                wix-options="{
+                        title: 'Button Background Color',
+                        startWithColor: 'color-1'
+                    }"
+            ></div>
+
+            <hr class="divider-long"/>
+
+            <div wix-param="_buttonTextColor"
+                wix-ctrl="ColorPickerSlider"
+                wix-options="{
+                        title: 'Button Text Color',
+                        startWithColor: 'color-5'
+                    }"
+            ></div>
+
+            <hr class="divider-long"/>
+
+            <div class="button_alignment"
+                wix-ctrl="DropDown"
+                wix-options="{
+                        title: 'Button Alignment',
+                        defaultValue: '0',
+                        options: [
+                            { value: '0', label: 'Select Alignment'},
+                            { value: 'left', label: 'Left'},
+                            { value: 'center', label: ' Center'},
+                            { value: 'right', label: ' Right'},                        
+                        ]
+                    }"
+            ></div>
+
+            <hr class="divider-long"/>
+
+            <div id="ToggleSwitch" class="floatingBar"
+                wix-ctrl="ToggleSwitch"
+                wix-options="{
+                            label: 'Floating Bar',
+                            defaultValue: true,
+                            infoText: 'some information text should be here'
+                        }"
+            ></div>
+
+            <hr class="divider-long"/>
+
+            <div wix-param="_floatingBarColor"
+                wix-ctrl="ColorPickerSlider"
+                wix-options="{
+                        title: 'Floating Bar Color',
+                        startWithColor: 'color-5'
+                    }"
+            ></div>
+
+            <hr class="divider-long"/>
         </div>
 
-        <hr class="divider-long"/>       
 
-        <div class="button_position"
-             wix-ctrl="DropDown"
-             wix-options="{
-                    title: 'Button Position',
-                    defaultValue: '0',
-                    options: [
-                        { value: '0', label: 'Select Position'},
-                        { value: 'top', label: ' Top'},
-                        { value: 'bottom', label: ' Bottom'},                        
-                    ]
-                }"
-        ></div>
-
-        <hr class="divider-long"/>
-
-        <div wix-param="_buttonBackgroundColor"
-             wix-ctrl="ColorPickerSlider"
-             wix-options="{
-                    title: 'Button Background Color',
-                    startWithColor: 'color-1'
-                }"
-        ></div>
-
-        <hr class="divider-long"/>
-
-        <div wix-param="_buttonTextColor"
-             wix-ctrl="ColorPickerSlider"
-             wix-options="{
-                    title: 'Button Text Color',
-                    startWithColor: 'color-5'
-                }"
-        ></div>
-
-        <hr class="divider-long"/>
-
-        <div class="button_alignment"
-             wix-ctrl="DropDown"
-             wix-options="{
-                    title: 'Button Alignment',
-                    defaultValue: '0',
-                    options: [
-                        { value: '0', label: 'Select Alignment'},
-                        { value: 'left', label: 'Left'},
-                        { value: 'center', label: ' Center'},
-                        { value: 'right', label: ' Right'},                        
-                    ]
-                }"
-        ></div>
-
-        <hr class="divider-long"/>
-
-        <div id="ToggleSwitch" class="floatingBar"
-             wix-ctrl="ToggleSwitch"
-             wix-options="{
-                        label: 'Floating Bar',
-                        defaultValue: true,
-                        infoText: 'some information text should be here'
-                    }"
-        ></div>
-
-        <hr class="divider-long"/>
-
-        <div wix-param="_floatingBarColor"
-             wix-ctrl="ColorPickerSlider"
-             wix-options="{
-                    title: 'Floating Bar Color',
-                    startWithColor: 'color-5'
-                }"
-        ></div>
-
-        <hr class="divider-long"/>
+    </div>
        
-    </div>    
 
     <!--Support tab-->
 
@@ -162,21 +160,24 @@
         <hr class="divider-long"/>
 
         <ul class="developer-info">
-            <li>
+            <li class="field">
                 <div wix-ctrl="Symbol" wix-options="{name: 'email'}"></div>
-                <a href="mailto:support@doordash.com">support@doordash.com</a>
-            </li>
-            <li>
-                <div wix-ctrl="Symbol" wix-options="{name: 'globe'}"></div>
-                <a href="https://dev.doordash.com">Developer Website</a>
-            </li>
-            <li>
+                <a href="mailto:storefronthelp@doordash.com">storefronthelp@doordash.com</a>
+            </li>            
+            <li class="field">
                 <div wix-ctrl="Symbol" wix-options="{name: 'phone'}"></div>
-                <a href="tel:1-888-888-8888">1-888-888-8888</a>
+                <a href="tel:855-973-1040">(855) 973 - 1040</a>
+            </li>
+            <li class="field">
+                <div wix-ctrl="Symbol" wix-options="{name: 'globe'}"></div>
+                <a href="https://dev.doordash.com" target="_blank">Developer Website</a>
+            </li>
+            <li class="field">
+                <div class="field-info">Say, access your DoorDash Storefront account details in your DoorDash Merchant Portal</div>
+                <div wix-ctrl="Symbol" wix-options="{name: 'globe'}"></div>
+                <a href="https://www.doordash.com/merchant" target="_blank">Merchant Website</a>                
             </li>
         </ul>
-
-        <hr class="divider-long"/>        
         
     </div>
 

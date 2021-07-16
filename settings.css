@@ -1,3 +1,18 @@
 .developer-info {    
     padding: 17px;   
 }
+.developer-info li{    
+    padding-bottom: 17px;   
+}
+.field-info{
+    padding:10px 10px 10px 30px;
+    color:#999999;
+}
+.field{
+    padding:10px 0px;
+    border-bottom:1px solid #f2f2f2;
+}
+.field a{
+    vertical-align:top;
+    margin-left:10px;
+}
