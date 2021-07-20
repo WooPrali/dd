@@ -17,7 +17,7 @@
     }
     advanced_settings();
 
-     Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 12});
+     
      attachListeners();
    // $(attachListeners);
     
@@ -31,7 +31,7 @@ function onUpdate(key, value) {
   console.log(key);
   console.log(value);
   console.log(Wix);
-
+  Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 12});
   Wix.Styles.getStyleParams(style => {
     console.log(style);
   });  
