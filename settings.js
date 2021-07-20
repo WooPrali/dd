@@ -49,7 +49,8 @@ function onUpdate(key, value) {
 function getPublic($element, ctrl) { 
   if($element.attr('wix-ctrl')!="Input") return;
   console.log('Input');
-  var key=$element.attr('wix-modal');
+  var key=$element.attr('wix-model');
+  console.log('key');
   console.log(key);
   if(!key)  return;
   //Wix.Data.Public.get(key, { scope: 'APP' }, 
