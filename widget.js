@@ -45,6 +45,8 @@ function stringify(input) {
             });
             console.log('navigated');
         });
+
+        Wix.Data.Public.get("startCounter", { scope: 'COMPONENT' }, function(d){console.log(d)}, function(f){console.log(f)});
        
     });
     console.log('jQuery');
