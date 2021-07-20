@@ -17,8 +17,8 @@
     }
     advanced_settings();
 
-     Wix.Settings.triggerSettingsUpdatedEvent({key: 'businessID_', value: "123456"});
-     attachListeners()
+     Wix.Settings.triggerSettingsUpdatedEvent({key: '_floatingBarColor3', value: {value: "rgba(186,218,85,0.25)"}});
+     attachListeners();
    // $(attachListeners);
     
   })
