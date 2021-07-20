@@ -54,11 +54,11 @@ function getPublic($element, ctrl) {
   console.log('key');
   console.log(key);   
   Wix.Data.Public.get(key, { scope: 'APP' }, 
-    function(d){console.log(d)}, 
+    function(d){console.log(d);  ctrl.setValue(d[key]);}, 
     function(f){console.log(f)}
   );
   console.log(ctrl);
-  ctrl.setValue(21);
+ 
 }
 
 function attachListeners() {
