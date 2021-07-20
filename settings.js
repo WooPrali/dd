@@ -20,6 +20,11 @@
      
      attachListeners();
    // $(attachListeners);
+
+
+   Wix.Data.Public.set("startCounter", 0, { scope: 'COMPONENT' },
+        function(d) { console.log(d) }, function(f) { console.log(f) }
+   );
     
   })
 })(jQuery);
