@@ -48,6 +48,7 @@ function attachListeners() {
         onUpdate($element.attr('wix-param'), value);
       })
     }
+     console.log($element.getParamKey()); 
     console.log($element);   
   });
 }
