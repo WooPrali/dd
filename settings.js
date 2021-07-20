@@ -22,7 +22,7 @@
    // $(attachListeners);
 
 
-   Wix.Data.Public.set("startCounter",20, { scope: 'COMPONENT' },
+   Wix.Data.Public.set("startCounter",20, { scope: 'APP' },
         function(d) { console.log(d) }, function(f) { console.log(f) }
    );
     
