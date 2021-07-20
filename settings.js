@@ -17,7 +17,7 @@
     }
     advanced_settings();
 
-     Wix.Settings.triggerSettingsUpdatedEvent({key: '_floatingBarColor3', value: {value: "rgba(186,218,85,0.25)"}});
+     Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 12});
      attachListeners();
    // $(attachListeners);
     
