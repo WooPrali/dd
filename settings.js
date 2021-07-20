@@ -26,12 +26,12 @@
 
 
 function onUpdate(key, value) { 
-  Wix.Settings.triggerSettingsUpdatedEvent({key: key, value: value});
-  Wix.Settings.triggerSettingsUpdatedEvent({key: key+'Fast', value: "123456"});
+  //Wix.Settings.triggerSettingsUpdatedEvent({key: key, value: value});
+  //Wix.Settings.triggerSettingsUpdatedEvent({key: key+'Fast', value: "123456"});
   console.log(key);
   console.log(value);
   console.log(Wix);
-  Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 0});
+  //Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 0});
   Wix.Styles.getStyleParams(style => {
     console.log(style);
   });  
