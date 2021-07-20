@@ -46,7 +46,7 @@ function attachListeners() {
       return validateEmail(email);
     });*/
     console.log($element);
-    $(sendButtonControl);
+    //$(sendButtonControl);
   });
 
 function validateEmail(email) {
