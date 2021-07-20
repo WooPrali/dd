@@ -58,6 +58,7 @@ function getPublic($element, ctrl) {
     function(f){console.log(f)}
   );
   console.log(ctrl);
+  ctrl.setValue(21);
 }
 
 function attachListeners() {
