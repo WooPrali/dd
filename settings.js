@@ -48,6 +48,7 @@ function onUpdate(key, value) {
 }
 function getPublic($element, ctrl) { 
   if($element.attr('wix-ctrl')!="Input") return;
+  console.log('Input');
   var key=$element.attr('wix-modal');
   console.log(key);
   if(!key)  return;
