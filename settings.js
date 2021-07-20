@@ -35,7 +35,7 @@ function onUpdate(key, value) {
   Wix.Styles.getStyleParams(style => {
     console.log(style);
   });  
-  Wix.UI.set('messagePlaceholder',"fast");  
+  //Wix.UI.set('messagePlaceholder',"fast");  
 
 }
 
