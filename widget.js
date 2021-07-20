@@ -3,11 +3,11 @@ Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
 Wix.Styles.getStyleParams(style => {
  console.log(style);
  });
-Wix.Styles.getSiteTextPresets(item => {
+Wix.settings.getStyleParams(item => {
  console.log(item);
 });
 
- 
+  console.log( "Wix.Styles");
  console.log( Wix.Styles);
 
 
