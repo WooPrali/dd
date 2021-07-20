@@ -31,15 +31,13 @@ function stringify(input) {
         Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d)}, function(f){console.log(f)});
         Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d)}, function(f){console.log(f)});
         
-         console.log('Next');
+        console.log('Next');
         Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
         // You can get the style params programmatically, un-comment the following snippet to see how it works:
         Wix.Styles.getStyleParams(style => {
         console.log(style);
         });
-        Wix.settings.getStyleParams(item => {
-        console.log(item);
-        });
+        
 
         console.log( "Wix.Styles");
         console.log( Wix.Styles);

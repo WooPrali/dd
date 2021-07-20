@@ -46,6 +46,14 @@ function onUpdate(key, value) {
   //Wix.UI.set('messagePlaceholder',"fast");  
 
 }
+function getPublic(key, ctrl) { 
+  if(!key)  return;
+  Wix.Data.Public.get(key, { scope: 'APP' }, 
+    function(d){console.log(d)}, 
+    function(f){console.log(f)}
+  );
+  ctrl.val(12);
+}
 
 function attachListeners() {
   $('[wix-ctrl]').each(function (index, element) {
@@ -55,7 +63,8 @@ function attachListeners() {
       ctrl.onChange(function (value) {
         onUpdate($element.attr('wix-param'), value);
       })
-    }   
+    } 
+    getPublic($element.attr('wix-modal'), ctrl);  
     console.log("ctrl");   
     console.log(ctrl);   
   });
