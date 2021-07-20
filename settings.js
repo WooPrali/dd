@@ -26,6 +26,8 @@ function onUpdate(key, value) {
   //Wix.Settings.triggerSettingsUpdatedEvent({key: key, value: value});
   console.log(key);
   console.log(value);
+  console.log(Wix);
+  
 }
 
 function attachListeners() {
