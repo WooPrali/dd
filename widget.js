@@ -3,6 +3,13 @@ Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
 Wix.Styles.getStyleParams(style => {
  console.log(style);
  });
+Wix.Styles.getSiteTextPresets(item => {
+ console.log(item);
+});
+
+ 
+ console.log( Wix.Styles);
+
 
 // You can also get the style every time it changes, try this:
 /*Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
