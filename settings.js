@@ -70,6 +70,6 @@ function attachListeners() {
     } 
     getPublic($element, ctrl);  
     console.log("ctrl");   
-    console.log(ctrl);   
+    //console.log(ctrl);   
   });
 }
