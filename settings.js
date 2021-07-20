@@ -16,6 +16,8 @@
       });  
     }
     advanced_settings();
+
+    $(attachListeners);
   })
 })(jQuery);
 
@@ -39,7 +41,7 @@ function attachListeners() {
     $('.support_email').getCtrl().setValidationFunction(function(email){
       return validateEmail(email);
     });
-
+    console.log($element);
     $(sendButtonControl);
   });
 
@@ -72,5 +74,3 @@ function sendButtonControl(){
     console.log('This is your call-to-action, take it seriously');
   })
 }
-
-$(attachListeners);
