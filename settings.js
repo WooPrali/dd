@@ -35,6 +35,10 @@ function onUpdate(key, value) {
   Wix.Styles.getStyleParams(style => {
     console.log(style);
   });  
+   Wix.settings.getStyleParams(item => {
+  console.log(item);
+  });
+
 }
 
 function attachListeners() {
