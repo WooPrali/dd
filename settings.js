@@ -38,9 +38,9 @@ function attachListeners() {
       })
     }
 
-    $('.support_email').getCtrl().setValidationFunction(function(email){
+    /*$('.support_email').getCtrl().setValidationFunction(function(email){
       return validateEmail(email);
-    });
+    });*/
     console.log($element);
     $(sendButtonControl);
   });
