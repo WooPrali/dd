@@ -20,6 +20,7 @@
      Wix.Settings.triggerSettingsUpdatedEvent({key: 'businessID_', value: "123456"});
      attachListeners()
    // $(attachListeners);
+    
   })
 })(jQuery);
 
@@ -29,7 +30,10 @@ function onUpdate(key, value) {
   console.log(key);
   console.log(value);
   console.log(Wix);
-  
+
+  Wix.Styles.getStyleParams(style => {
+    console.log(style);
+  });  
 }
 
 function attachListeners() {
