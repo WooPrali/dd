@@ -29,6 +29,8 @@ function stringify(input) {
     $(document).ready(function(){
         console.log('Ready');
         Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d)}, function(f){console.log(f)});
+        Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d)}, function(f){console.log(f)});
+        
          console.log('Next');
         Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
         // You can get the style params programmatically, un-comment the following snippet to see how it works:
