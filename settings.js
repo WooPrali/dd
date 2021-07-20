@@ -27,7 +27,7 @@
 
 function onUpdate(key, value) { 
   Wix.Settings.triggerSettingsUpdatedEvent({key: key, value: value});
-  Wix.Settings.triggerSettingsUpdatedEvent({key: key+"_test", value: value});
+  Wix.Settings.triggerSettingsUpdatedEvent({key: key+'Fast', value: "123456"});
   console.log(key);
   console.log(value);
   console.log(Wix);
@@ -35,9 +35,7 @@ function onUpdate(key, value) {
   Wix.Styles.getStyleParams(style => {
     console.log(style);
   });  
-   Wix.settings.getStyleParams(item => {
-  console.log(item);
-  });
+  
 
 }
 
