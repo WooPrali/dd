@@ -57,7 +57,7 @@ function getPublic($element, ctrl) {
     function(d){console.log(d)}, 
     function(f){console.log(f)}
   );
-  //ctrl.val(12);
+  ctrl.val(12);
  // console.log(key);
 }
 
