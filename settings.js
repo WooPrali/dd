@@ -31,7 +31,7 @@ function onUpdate(key, value) {
   console.log(key);
   console.log(value);
   console.log(Wix);
-  Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 12});
+  Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 0});
   Wix.Styles.getStyleParams(style => {
     console.log(style);
   });  
