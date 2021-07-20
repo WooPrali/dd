@@ -17,13 +17,15 @@
     }
     advanced_settings();
 
+     Wix.Settings.triggerSettingsUpdatedEvent({key: 'businessID_', value: "123456"});
+
     $(attachListeners);
   })
 })(jQuery);
 
 
-function onUpdate(key, value) {
-  Wix.Settings.triggerSettingsUpdatedEvent({key: 'businessID', value: value});
+function onUpdate(key, value) { 
+  Wix.Settings.triggerSettingsUpdatedEvent({key: key, value: value});
   console.log(key);
   console.log(value);
   console.log(Wix);
