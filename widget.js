@@ -25,24 +25,27 @@ function stringify(input) {
         return input;
     }
 }
+(function($){
+    $(document).ready(() => {
 
-$(document).ready(() => {
+        Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
+        // You can get the style params programmatically, un-comment the following snippet to see how it works:
+        Wix.Styles.getStyleParams(style => {
+        console.log(style);
+        });
+        Wix.settings.getStyleParams(item => {
+        console.log(item);
+        });
 
-    Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
-    // You can get the style params programmatically, un-comment the following snippet to see how it works:
-    Wix.Styles.getStyleParams(style => {
-    console.log(style);
+        console.log( "Wix.Styles");
+        console.log( Wix.Styles);
+        $('.navtohome').click(() => {
+            Wix.getSiteMap(pages => {
+            Wix.navigateToPage(pages[0].pageId.substring(1));
+            });
+            console.log('navigated');
+        });
+        console.log('Ready');
     });
-    Wix.settings.getStyleParams(item => {
-    console.log(item);
-    });
-
-  console.log( "Wix.Styles");
- console.log( Wix.Styles);
-  $('.navtohome').click(() => {
-    Wix.getSiteMap(pages => {
-      Wix.navigateToPage(pages[0].pageId.substring(1));
-    });
-    console.log('navigated');
-  });
-});
+    console.log('jQuery');
+})(jQuery);
