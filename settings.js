@@ -55,8 +55,8 @@ function attachListeners() {
       ctrl.onChange(function (value) {
         onUpdate($element.attr('wix-param'), value);
       })
-    }
-     console.log(ctrl.getParamKey()); 
-    console.log($element);   
+    }   
+    console.log("ctrl");   
+    console.log(ctrl);   
   });
 }
