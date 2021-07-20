@@ -26,7 +26,7 @@ function stringify(input) {
     }
 }
 (function($){
-    $(document).ready(() => {
+    $(document).ready(function(){
 
         Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
         // You can get the style params programmatically, un-comment the following snippet to see how it works:
