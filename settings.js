@@ -37,7 +37,7 @@ function onUpdate(key, value) {
   console.log(value);
   console.log(Wix);
   Wix.Data.Public.set(key, value, { scope: 'APP' },
-        function(d) { console.log(d) }, function(f) { console.log(f) }
+       // function(d) { console.log(d) }, function(f) { console.log(f) }
   );
   //Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 0});
   Wix.Styles.getStyleParams(style => {
@@ -46,13 +46,16 @@ function onUpdate(key, value) {
   //Wix.UI.set('messagePlaceholder',"fast");  
 
 }
-function getPublic(key, ctrl) { 
+function getPublic($element, ctrl) { 
+  if($element.attr('wix-ctrl')!="Input") return;
+  var key=$element.attr('wix-modal');
   if(!key)  return;
   Wix.Data.Public.get(key, { scope: 'APP' }, 
-    function(d){console.log(d)}, 
-    function(f){console.log(f)}
+   // function(d){console.log(d)}, 
+   // function(f){console.log(f)}
   );
-  ctrl.val(12);
+  //ctrl.val(12);
+  console.log(key);
 }
 
 function attachListeners() {
@@ -64,7 +67,7 @@ function attachListeners() {
         onUpdate($element.attr('wix-param'), value);
       })
     } 
-    getPublic($element.attr('wix-modal'), ctrl);  
+    getPublic($element, ctrl);  
     console.log("ctrl");   
     console.log(ctrl);   
   });
