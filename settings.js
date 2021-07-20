@@ -50,13 +50,13 @@ function getPublic($element, ctrl) {
   if($element.attr('wix-ctrl')!="Input") return;
   console.log('Input');
   var key=$element.attr('wix-model');
+  if(!key) return;
   console.log('key');
-  console.log(key);
-  if(!key)  return;
-  //Wix.Data.Public.get(key, { scope: 'APP' }, 
-   // function(d){console.log(d)}, 
-   // function(f){console.log(f)}
-  //);
+  console.log(key);  
+  Wix.Data.Public.get(key, { scope: 'APP' }, 
+    function(d){console.log(d)}, 
+    function(f){console.log(f)}
+  );
   //ctrl.val(12);
  // console.log(key);
 }
