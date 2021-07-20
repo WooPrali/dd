@@ -52,7 +52,7 @@ function getPublic($element, ctrl) {
   var key=$element.attr('wix-model');
   if(!key) return;
   console.log('key');
-  console.log(key);  
+  console.log(key);   
   Wix.Data.Public.get(key, { scope: 'APP' }, 
     function(d){console.log(d)}, 
     function(f){console.log(f)}
