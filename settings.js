@@ -36,9 +36,9 @@ function onUpdate(key, value) {
   console.log(key);
   console.log(value);
   console.log(Wix);
-  //Wix.Data.Public.set(key, value, { scope: 'APP' },
-       // function(d) { console.log(d) }, function(f) { console.log(f) }
-  //);
+  Wix.Data.Public.set(key, value, { scope: 'APP' },
+       function(d) { console.log(d) }, function(f) { console.log(f) }
+  );
   //Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 0});
   Wix.Styles.getStyleParams(style => {
     console.log(style);
