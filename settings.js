@@ -18,8 +18,8 @@
     advanced_settings();
 
      Wix.Settings.triggerSettingsUpdatedEvent({key: 'businessID_', value: "123456"});
-
-    $(attachListeners);
+     attachListeners()
+   // $(attachListeners);
   })
 })(jQuery);
 
@@ -41,40 +41,6 @@ function attachListeners() {
         onUpdate($element.attr('wix-param'), value);
       })
     }
-
-    /*$('.support_email').getCtrl().setValidationFunction(function(email){
-      return validateEmail(email);
-    });*/
-    console.log($element);
-    //$(sendButtonControl);
+    console.log($element);   
   });
-
-function validateEmail(email) {
-    let reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return reg.test(email);
-}
-
-function validateMessage(){
-  return $('.support_message').getCtrl().getValue().length > 5;
-}
-
-function sendButtonControl(){
-  $('.support_message, .support_email').each(function(index, element){
-    var ctrl = $(element).getCtrl();
-    ctrl.onChange(function(){
-      var button = $('.support_sendButton').getCtrl();
-      if(validateEmail($('.support_email').getCtrl().getValue()) && validateMessage() && button.options.disabled){
-        button.enable();
-      }
-      else{
-        button.disable();
-      }
-    });
-  });
-}
-
-
-  $('#main-cta').getCtrl().onClick(function () {
-    console.log('This is your call-to-action, take it seriously');
-  })
 }
