@@ -1,19 +1,20 @@
+var SDK_loaded=false;
+var data={}; count=0; style_data=false; editor=false;     
+
 console.log("Widget");
 // You can also get the style every time it changes, try this:
 Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
     console.log("Style Update");
     console.log(style);
+    data={}; count=0; style_data=false; editor=true;         
+    loadData();
 });
 
 
 (function($){
     $(document).ready(function(){
-        console.log('Ready');
-        var SDK_loaded=false;
-        var data={}; count=0; style_data=false; editor=false;         
-        console.log('Next');
-
-        
+        console.log('Ready');            
+        console.log('Next');        
 
         loadData();
 
@@ -27,8 +28,8 @@ Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
            // updateCompHeight();
             console.log("Setting Update");
             console.log(update);
-            data={}; count=0; style_data=false; editor=true;         
-            loadData();
+            //data={}; count=0; style_data=false; editor=true;         
+            //loadData();
         }
 
       
