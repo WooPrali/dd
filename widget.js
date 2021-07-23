@@ -28,23 +28,24 @@ function stringify(input) {
 (function($){
     $(document).ready(function(){
         console.log('Ready');
-        var data={}; count=0;
-        function run(){
-            count++;
-            if(count==2)  {
+        var data={}; count=0; style_data=false;
+        function run(){            
+            if(count==2 && style_data)  {
                 console.log(data);
                 create()
             }
         }       
        // Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
-        Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d); data._businessID=d._businessID; run();}, function(f){console.log(f)});
-        Wix.Data.Public.get("_buttonText", { scope: 'APP' }, function(d){console.log(d); data._buttonText=d._buttonText; run();}, function(f){console.log(f)});
+        Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d); data._businessID=d._businessID; count++; run();}, function(f){console.log(f)});
+        Wix.Data.Public.get("_buttonText", { scope: 'APP' }, function(d){console.log(d); data._buttonText=d._buttonText; count++; run();}, function(f){console.log(f)});
         
         console.log('Next');
         Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
         // You can get the style params programmatically, un-comment the following snippet to see how it works:
         Wix.Styles.getStyleParams(style => {
-        console.log(style);
+            style_data=style;
+            console.log(style);
+            run();            
         });
         
 
@@ -78,7 +79,7 @@ function stringify(input) {
             })(window, document.head);
 
             StorefrontSDK.executeCommand("renderFloatingButton", {
-                businessId: 1234,
+                businessId: data._businessID,
                 buttonText: data._buttonText,
                 position: "",
                 buttonBackgroundColor: "#ff0000",
@@ -86,7 +87,7 @@ function stringify(input) {
                 buttonAlignment: "",
                 floatingBar: 1,
                 backgroundColor: "",
-                urlParams: { utm_medium: "wp_plugin" },
+                urlParams: { utm_medium: "wix_app" },
             });
 
             /*StorefrontSDK.executeCommand("renderFloatingButton", {
