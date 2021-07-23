@@ -67,7 +67,7 @@ function stringify(input) {
             console.log('navigated');
         });
         
-        create();
+        //create();
         function create(){
 
             !(function (e, t, r, n) {
