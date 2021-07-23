@@ -89,7 +89,7 @@ console.log("Widget");
         
         
         function create(){           
-            if(!StorefrontSDK){
+            if(typeof StorefrontSDK == "undefined"){
                 !(function (e, t, r, n) {
                     var o, c, s;
                     (o = e.document),
