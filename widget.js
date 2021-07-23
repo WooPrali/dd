@@ -42,6 +42,7 @@ function stringify(input) {
             //$('.sample-settings-title').show();
            // $('.json').html(update);
            // updateCompHeight();
+            console.log("Setting Update");
             console.log(update);
         }
 
