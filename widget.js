@@ -63,6 +63,8 @@ Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
         function run(){  
             console.log(data);          
             if(count==2 && style_data)  {
+                console.log("DATA");
+                console.log(style_data);
                 console.log(data);
                 create();
             }
