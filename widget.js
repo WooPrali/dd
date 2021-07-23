@@ -31,7 +31,7 @@ function stringify(input) {
         window.StorefrontSDK=false;
         var data={}; count=0; style_data=false; editor=false;         
         console.log('Next');
-        
+
         !(function (e, t, r, n) {
             var o, c, s;
             (o = e.document),
@@ -83,7 +83,8 @@ function stringify(input) {
             });
         }
 
-        function run(){            
+        function run(){  
+            console.log(data);          
             if(count==2 && style_data)  {
                 console.log(data);
                 create();
