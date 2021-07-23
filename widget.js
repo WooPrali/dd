@@ -28,7 +28,10 @@ function stringify(input) {
 (function($){
     $(document).ready(function(){
         console.log('Ready');
-        var data={};        
+        var data={}; 
+        function run(){
+            console.log(data);
+        }       
         Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
         Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d); data._businessID=d._businessID; run();}, function(f){console.log(f)});
         
@@ -48,9 +51,7 @@ function stringify(input) {
             });
             console.log('navigated');
         });
-        function run(){
-            if(data.length==2) console.log("run");
-        }
+        
         create();
         function create(){
 
