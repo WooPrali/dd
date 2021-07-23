@@ -32,8 +32,8 @@ console.log("Widget");
             console.log("Style Update");
             console.log(style);
             data={}; count=0; style_data=false; editor=true; 
-            $body.html(" ");        
-            loadData();
+            //$body.html(" ");        
+            //loadData();
         });
 
 
@@ -89,7 +89,7 @@ console.log("Widget");
         
         
         function create(){           
-            if(typeof StorefrontSDK == "undefined"){
+            //if(typeof StorefrontSDK == "undefined"){
                 !(function (e, t, r, n) {
                     var o, c, s;
                     (o = e.document),
@@ -107,7 +107,7 @@ console.log("Widget");
                         t.insertBefore(s, c);
                 })(window, document.head); 
                 SDK_loaded=true;
-            }
+            //}
             StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: data._businessID,
                 buttonText: data._buttonText,
