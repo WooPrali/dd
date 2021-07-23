@@ -87,7 +87,7 @@ console.log("Widget");
         
         
         function create(){
-            if(!SDK_loaded){
+            //if(!SDK_loaded){
                 !(function (e, t, r, n) {
                     var o, c, s;
                     (o = e.document),
@@ -105,7 +105,7 @@ console.log("Widget");
                         t.insertBefore(s, c);
                 })(window, document.head); 
                 SDK_loaded=true;
-            }
+            //}
             
             StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: data._businessID,
