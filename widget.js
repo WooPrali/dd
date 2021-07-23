@@ -45,6 +45,15 @@ function stringify(input) {
         Wix.Styles.getStyleParams(style => {
             style_data=style;
             console.log(style);
+            if(style_data.numbers._buttonAlignment==1){
+                style_data._buttonAlignment='left';
+            }else if(style_data.numbers._buttonAlignment==2){
+                style_data._buttonAlignment='center';
+            }else if(style_data.numbers._buttonAlignment==3){
+                style_data._buttonAlignment='right';
+            }else{
+                style_data._buttonAlignment='';
+            }
             run();            
         });
         
@@ -82,10 +91,10 @@ function stringify(input) {
                 businessId: data._businessID,
                 buttonText: data._buttonText,
                 position: "",
-                buttonBackgroundColor: "#ff0000",
-                buttonTextColor: "#ffffff",
-                buttonAlignment: "",
-                floatingBar: 1,
+                buttonBackgroundColor: style_data.colors._buttonBackgroundColor.value,
+                buttonTextColor: style_data.colors._buttonTextColor.value,
+                buttonAlignment: style_data._buttonAlignment,
+                floatingBar: style_data.booleans._floatingBar,
                 backgroundColor: "",
                 urlParams: { utm_medium: "wix_app" },
             });
