@@ -31,7 +31,24 @@ function stringify(input) {
         window.StorefrontSDK=false;
         var data={}; count=0; style_data=false; editor=false;         
         console.log('Next');
-        load();
+        
+        !(function (e, t, r, n) {
+            var o, c, s;
+            (o = e.document),
+                (c = t.children[0]),
+                (s = o.createElement("script")),
+                (e.StorefrontSDKObject = "StorefrontSDK"),
+                (e[e.StorefrontSDKObject] = {
+                    executeCommand: function (t, r) {
+                        e[e.StorefrontSDKObject].buffer.push([t, r]);
+                    },
+                    buffer: [],
+                }),
+                (s.async = 1),
+                (s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js"),
+                t.insertBefore(s, c);
+        })(window, document.head); 
+
         loadData();
 
         Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
@@ -84,26 +101,9 @@ function stringify(input) {
         });
         */
         
-        function load(){
-            !(function (e, t, r, n) {
-                var o, c, s;
-                (o = e.document),
-                    (c = t.children[0]),
-                    (s = o.createElement("script")),
-                    (e.StorefrontSDKObject = "StorefrontSDK"),
-                    (e[e.StorefrontSDKObject] = {
-                        executeCommand: function (t, r) {
-                            e[e.StorefrontSDKObject].buffer.push([t, r]);
-                        },
-                        buffer: [],
-                    }),
-                    (s.async = 1),
-                    (s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js"),
-                    t.insertBefore(s, c);
-            })(window, document.head);            
-        }
+        
         function create(){
-            window.StorefrontSDK.executeCommand("renderFloatingButton", {
+            StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: data._businessID,
                 buttonText: data._buttonText,
                 position: "",
