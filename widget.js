@@ -28,8 +28,9 @@ function stringify(input) {
 (function($){
     $(document).ready(function(){
         console.log('Ready');
-        Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d)}, function(f){console.log(f)});
-        Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d)}, function(f){console.log(f)});
+        var data={};        
+        Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
+        Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d); data._businessID=d._businessID; run();}, function(f){console.log(f)});
         
         console.log('Next');
         Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
@@ -47,6 +48,9 @@ function stringify(input) {
             });
             console.log('navigated');
         });
+        function run(){
+            if(data.length==2) console.log("run");
+        }
         create();
         function create(){
 
