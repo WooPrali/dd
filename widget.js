@@ -111,7 +111,7 @@ Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
                 buttonTextColor: style_data.colors._buttonTextColor.value,
                 buttonAlignment: style_data._buttonAlignment,
                 floatingBar: style_data.booleans._floatingBar,
-                backgroundColor: style_data.colors._floatingBarColor,
+                backgroundColor: style_data.colors._floatingBarColor.value,
                 urlParams: { utm_medium: "wix_app" },
             });
 
