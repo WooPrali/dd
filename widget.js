@@ -1,30 +1,3 @@
-
-
-
-// You can also get the style every time it changes, try this:
-/*Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
- console.log(style);
- });*/
-
-function onSettingsUpdate(update) {
-    update = stringify(update);
-    $('.sample-settings-title').show();
-    $('.json').html(update);
-    updateCompHeight();
-}
-
-function updateCompHeight(height) {
-    const desiredHeight = height || document.documentElement.scrollHeight;
-    Wix.setHeight(desiredHeight);
-}
-
-function stringify(input) {
-    try {
-        return JSON.stringify(input, null, 4);
-    } catch (err) {
-        return input;
-    }
-}
 (function($){
     $(document).ready(function(){
         console.log('Ready');
@@ -47,6 +20,12 @@ function stringify(input) {
             console.log("Setting Update");
             console.log(update);
         }
+
+        // You can also get the style every time it changes, try this:
+        Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
+            console.log(style);
+        });
+
 
         function loadData(){
             // Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
