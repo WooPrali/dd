@@ -6,6 +6,7 @@ console.log("Widget");
 
 (function($){
     $(document).ready(function(){
+        var $body=$("body");
         console.log('Ready');            
         console.log('Next');        
 
@@ -30,7 +31,8 @@ console.log("Widget");
         Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
             console.log("Style Update");
             console.log(style);
-            data={}; count=0; style_data=false; editor=true;         
+            data={}; count=0; style_data=false; editor=true; 
+            $body.html(" ");        
             loadData();
         });
 
