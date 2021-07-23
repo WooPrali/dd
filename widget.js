@@ -31,10 +31,14 @@ function stringify(input) {
         var data={}; count=0;
         function run(){
             count++;
-            if(count==2)  console.log(data);
+            if(count==2)  {
+                console.log(data);
+                create()
+            }
         }       
-        Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
+       // Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
         Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d); data._businessID=d._businessID; run();}, function(f){console.log(f)});
+        Wix.Data.Public.get("_buttonText", { scope: 'APP' }, function(d){console.log(d); data._buttonText=d._buttonText; run();}, function(f){console.log(f)});
         
         console.log('Next');
         Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
@@ -75,7 +79,7 @@ function stringify(input) {
 
             StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: 1234,
-                buttonText: "Order Online 3",
+                buttonText: data._buttonText,
                 position: "",
                 buttonBackgroundColor: "#ff0000",
                 buttonTextColor: "#ffffff",
@@ -84,6 +88,18 @@ function stringify(input) {
                 backgroundColor: "",
                 urlParams: { utm_medium: "wp_plugin" },
             });
+
+            /*StorefrontSDK.executeCommand("renderFloatingButton", {
+                businessId: 1234,
+                buttonText: "Order Online 3",
+                position: "",
+                buttonBackgroundColor: "#ff0000",
+                buttonTextColor: "#ffffff",
+                buttonAlignment: "",
+                floatingBar: 1,
+                backgroundColor: "",
+                urlParams: { utm_medium: "wp_plugin" },
+            });*/
         }
        
     });
