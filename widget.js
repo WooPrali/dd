@@ -48,6 +48,14 @@ Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
                 }else{
                     style_data._buttonAlignment='';
                 }
+
+                if(style_data.numbers._buttonPosition==1){
+                    style_data._buttonPosition='top';
+                }else if(style_data.numbers._buttonPosition==2){
+                    style_data._buttonPosition='bottom';
+                }else{
+                    style_data._buttonPosition='';
+                }
                 run();            
             });
         }
@@ -96,12 +104,12 @@ Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
             StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: data._businessID,
                 buttonText: data._buttonText,
-                position: "",
+                position: style_data._buttonPosition,
                 buttonBackgroundColor: style_data.colors._buttonBackgroundColor.value,
                 buttonTextColor: style_data.colors._buttonTextColor.value,
                 buttonAlignment: style_data._buttonAlignment,
                 floatingBar: style_data.booleans._floatingBar,
-                backgroundColor: "",
+                backgroundColor: style_data.colors._floatingBarColor,
                 urlParams: { utm_medium: "wix_app" },
             });
 
