@@ -28,7 +28,7 @@ function stringify(input) {
 (function($){
     $(document).ready(function(){
         console.log('Ready');
-        var GStorefrontSDK;
+        window.StorefrontSDK=false;
         var data={}; count=0; style_data=false; editor=false;         
         console.log('Next');
         load();
@@ -100,11 +100,10 @@ function stringify(input) {
                     (s.async = 1),
                     (s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js"),
                     t.insertBefore(s, c);
-            })(window, document.head);
-            GStorefrontSDK=StorefrontSDK;
+            })(window, document.head);            
         }
         function create(){
-            GStorefrontSDK.executeCommand("renderFloatingButton", {
+            window.StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: data._businessID,
                 buttonText: data._buttonText,
                 position: "",
