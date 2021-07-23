@@ -28,6 +28,7 @@ function stringify(input) {
 (function($){
     $(document).ready(function(){
         console.log('Ready');
+        var GStorefrontSDK;
         var data={}; count=0; style_data=false; editor=false;         
         console.log('Next');
         load();
@@ -99,9 +100,10 @@ function stringify(input) {
                     (s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js"),
                     t.insertBefore(s, c);
             })(window, document.head);
+            GStorefrontSDK=StorefrontSDK;
         }
         function create(){
-            StorefrontSDK.executeCommand("renderFloatingButton", {
+            GStorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: data._businessID,
                 buttonText: data._buttonText,
                 position: "",
