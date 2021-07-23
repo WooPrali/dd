@@ -28,9 +28,10 @@ function stringify(input) {
 (function($){
     $(document).ready(function(){
         console.log('Ready');
-        var data={}; 
+        var data={}; count=0;
         function run(){
-            console.log(data);
+            count++;
+            if(count==2)  console.log(data);
         }       
         Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
         Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d); data._businessID=d._businessID; run();}, function(f){console.log(f)});
