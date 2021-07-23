@@ -1,5 +1,8 @@
 var SDK_loaded=false;
-var data={}; count=0; style_data=false; editor=false;     
+var data={}; count=0; style_data=false; editor=false; 
+var loadData=false;  
+var run=false;  
+var create=false;
 
 console.log("Widget");
 // You can also get the style every time it changes, try this:
@@ -35,7 +38,7 @@ Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
       
 
 
-        function loadData(){
+        loadData=function(){
             // Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
             Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d); data._businessID=d._businessID; count++; run();}, function(f){console.log(f)});
             Wix.Data.Public.get("_buttonText", { scope: 'APP' }, function(d){console.log(d); data._buttonText=d._buttonText; count++; run();}, function(f){console.log(f)});
@@ -63,7 +66,7 @@ Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
             });
         }
 
-        function run(){  
+        run=function(){  
             console.log(data);          
             if(count==2 && style_data)  {
                 console.log("DATA");
@@ -85,7 +88,7 @@ Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
         */
         
         
-        function create(){
+        create=function(){
             if(!SDK_loaded){
                 !(function (e, t, r, n) {
                     var o, c, s;
