@@ -27,6 +27,8 @@ Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
            // updateCompHeight();
             console.log("Setting Update");
             console.log(update);
+            data={}; count=0; style_data=false; editor=true;         
+            loadData();
         }
 
       
