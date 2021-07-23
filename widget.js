@@ -69,7 +69,7 @@ function stringify(input) {
 
             StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: 1234,
-                buttonText: "Order Online 2",
+                buttonText: "Order Online 3",
                 position: "",
                 buttonBackgroundColor: "#ff0000",
                 buttonTextColor: "#ffffff",
