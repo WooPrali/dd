@@ -104,7 +104,7 @@ function stringify(input) {
         
         
         function create(){
-            StorefrontSDK.executeCommand("renderFloatingButton", {
+            window.StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: data._businessID,
                 buttonText: data._buttonText,
                 position: "",
