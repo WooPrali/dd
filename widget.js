@@ -1,8 +1,10 @@
+console.log("Widget");
 // You can also get the style every time it changes, try this:
 Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
     console.log("Style Update");
     console.log(style);
 });
+
 
 (function($){
     $(document).ready(function(){
