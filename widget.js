@@ -28,36 +28,50 @@ function stringify(input) {
 (function($){
     $(document).ready(function(){
         console.log('Ready');
-        var data={}; count=0; style_data=false;
+        var data={}; count=0; style_data=false; editor=false;         
+        console.log('Next');
+        load();
+        loadData();
+
+        Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
+        // You can get the style params programmatically, un-comment the following snippet to see how it works:
+
+        function onSettingsUpdate(update) {
+           // update = stringify(update);
+            //$('.sample-settings-title').show();
+           // $('.json').html(update);
+           // updateCompHeight();
+            console.log(update);
+        }
+
+        function loadData(){
+            // Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
+            Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d); data._businessID=d._businessID; count++; run();}, function(f){console.log(f)});
+            Wix.Data.Public.get("_buttonText", { scope: 'APP' }, function(d){console.log(d); data._buttonText=d._buttonText; count++; run();}, function(f){console.log(f)});
+            Wix.Styles.getStyleParams(style => {
+                style_data=style;
+                console.log(style);
+                if(style_data.numbers._buttonAlignment==1){
+                    style_data._buttonAlignment='left';
+                }else if(style_data.numbers._buttonAlignment==2){
+                    style_data._buttonAlignment='center';
+                }else if(style_data.numbers._buttonAlignment==3){
+                    style_data._buttonAlignment='right';
+                }else{
+                    style_data._buttonAlignment='';
+                }
+                run();            
+            });
+        }
+
         function run(){            
             if(count==2 && style_data)  {
                 console.log(data);
-                create()
+                create();
             }
-        }       
-       // Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
-        Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d); data._businessID=d._businessID; count++; run();}, function(f){console.log(f)});
-        Wix.Data.Public.get("_buttonText", { scope: 'APP' }, function(d){console.log(d); data._buttonText=d._buttonText; count++; run();}, function(f){console.log(f)});
-        
-        console.log('Next');
-        Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
-        // You can get the style params programmatically, un-comment the following snippet to see how it works:
-        Wix.Styles.getStyleParams(style => {
-            style_data=style;
-            console.log(style);
-            if(style_data.numbers._buttonAlignment==1){
-                style_data._buttonAlignment='left';
-            }else if(style_data.numbers._buttonAlignment==2){
-                style_data._buttonAlignment='center';
-            }else if(style_data.numbers._buttonAlignment==3){
-                style_data._buttonAlignment='right';
-            }else{
-                style_data._buttonAlignment='';
-            }
-            run();            
-        });
-        
+        }  
 
+        /*
         console.log( "Wix.Styles");
         console.log( Wix.Styles);
         $('.navtohome').click(() => {
@@ -66,10 +80,9 @@ function stringify(input) {
             });
             console.log('navigated');
         });
+        */
         
-        //create();
-        function create(){
-
+        function load(){
             !(function (e, t, r, n) {
                 var o, c, s;
                 (o = e.document),
@@ -86,7 +99,8 @@ function stringify(input) {
                     (s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js"),
                     t.insertBefore(s, c);
             })(window, document.head);
-
+        }
+        function create(){
             StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: data._businessID,
                 buttonText: data._buttonText,
