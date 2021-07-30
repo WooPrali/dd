@@ -20,7 +20,7 @@ console.log("Widget");
             //$('.sample-settings-title').show();
            // $('.json').html(update);
            // updateCompHeight();
-            console.log("Setting Update");
+            console.log("Widget Setting Update");
             console.log(update);
             //data={}; count=0; style_data=false; editor=true;         
             //loadData();
