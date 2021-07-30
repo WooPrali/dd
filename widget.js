@@ -103,33 +103,35 @@ console.log("Widget");
         
         function create(){ 
            
-            !(function (e, t, r, n) {
-                console.log("SDK SCRIPT 2| WIDGET");   
-            
-                var o, c, s;               
-
-                o = e.document;
-                s = o.createElement("script");
+            if(!window['StorefrontSDK']){
+                !(function (e, t, r, n) {
+                    console.log("SDK SCRIPT 2| WIDGET");   
                 
-                s.async = 1;
-                s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js";
+                    var o, c, s;               
 
-                c = t.children[0];
-                t.insertBefore(s, c);
+                    o = e.document;
+                    s = o.createElement("script");
+                    
+                    s.async = 1;
+                    s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js";
 
-                e.StorefrontSDKObject = "StorefrontSDK";
-                e[e.StorefrontSDKObject] = {
-                    executeCommand: function (t, r) {
-                        console.log("SDK EXECUTE | WIDGET");
-                        e[e.StorefrontSDKObject].buffer.push([t, r]);
-                    },
-                    buffer: [],
-                };
+                    c = t.children[0];
+                    t.insertBefore(s, c);
 
-               
-                 
+                    e.StorefrontSDKObject = "StorefrontSDK";
+                    e[e.StorefrontSDKObject] = {
+                        executeCommand: function (t, r) {
+                            console.log("SDK EXECUTE | WIDGET");
+                            e[e.StorefrontSDKObject].buffer.push([t, r]);
+                        },
+                        buffer: [],
+                    };
 
-            })(window, document.head); 
+                
+                    
+
+                })(window, document.head); 
+            }
             
             SDK_loaded=true;
 
