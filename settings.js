@@ -37,6 +37,8 @@ function attachListeners() {
     
     if ($.isFunction(ctrl.onChange)) {
       ctrl.onChange(function (value) {
+        console.log("----------------------------------------------------------"); 
+        console.log("---------------------UPDATE DATA :SETTINGS---------------"); 
         onUpdate($element.attr('wix-param'), value);
         //console.log("Settings ctrl onChange");  console.log(value);  
       })
