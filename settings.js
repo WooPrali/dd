@@ -50,8 +50,7 @@ function getPublic($element, ctrl) {
   //console.log('Settings Input');
   var key=$element.attr('wix-model');
   if(!key) return;
-  console.log('Settings key');
-  console.log(key);   
+  console.log('Settings key : '+ key );
   Wix.Data.Public.get(key, { scope: 'APP' }, 
     function(d){console.log("Settings Public success "+key);  console.log(d);  ctrl.setValue(d[key]);}, 
     function(f){console.log("Settings Public fail "+key);console.log(f)}
