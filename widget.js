@@ -29,7 +29,7 @@ console.log("Widget");
       
         // You can also get the style every time it changes, try this:
         Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
-            console.log("Widget Style Update");
+            console.log("Widget Style Update ");
             console.log(style);
             data={}; count=0; style_data=false; editor=true; 
             //$body.html(" ");        
