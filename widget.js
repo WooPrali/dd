@@ -29,10 +29,12 @@ console.log("Widget");
 
         function onPublicUpdate(update) {        
             console.log("----------------------------------------------------------"); 
-            console.log("---------------------PUBLIC DATA : WIDGET---------------");   
-            console.log(update);
-            data={}; count=0; style_data=false; editor=true;       
-            loadData(); 
+            console.log("---------------------PUBLIC DATA : WIDGET---------------"); 
+            data={}; count=0; style_data=false; editor=true; 
+            loadPublicData();
+            $.extend( data, update );
+            loadStyleData();   
+            console.log(update);            
             console.log(data);     
         }
       
@@ -44,11 +46,12 @@ console.log("Widget");
             data={}; count=0; style_data=false; editor=true;             
             //loadData();
         });*/
-
-        function loadData(){
+        function loadPublicData(){
             // Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
             Wix.Data.Public.get("_businessID", { scope: 'APP' }, function(d){console.log(d); data._businessID=d._businessID; count++; run();}, function(f){console.log(f)});
-            Wix.Data.Public.get("_buttonText", { scope: 'APP' }, function(d){console.log(d); data._buttonText=d._buttonText; count++; run();}, function(f){console.log(f)});
+            Wix.Data.Public.get("_buttonText", { scope: 'APP' }, function(d){console.log(d); data._buttonText=d._buttonText; count++; run();}, function(f){console.log(f)});            
+        }
+        function loadStyleData(){         
             Wix.Styles.getStyleParams(style => {
                 style_data=style;
                 console.log(style);
