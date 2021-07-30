@@ -69,8 +69,9 @@ console.log("Widget");
         function run(){  
             console.log(data);          
             if(count==2 && style_data)  {
-                console.log("Widget DATA");
+                console.log("Widget STYLE DATA");
                 console.log(style_data);
+                console.log("Widget DATA");
                 console.log(data);
                 create();
             }
