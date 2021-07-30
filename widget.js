@@ -106,11 +106,17 @@ console.log("Widget");
             !(function (e, t, r, n) {
                 console.log("SDK SCRIPT 2| WIDGET");   
             
-                var o, c, s;
+                var o, c, s;               
+
                 o = e.document;
+                s = o.createElement("script");
+                
+                s.async = 1;
+                s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js";
 
                 c = t.children[0];
-                s = o.createElement("script");
+                t.insertBefore(s, c);
+
                 e.StorefrontSDKObject = "StorefrontSDK";
                 e[e.StorefrontSDKObject] = {
                     executeCommand: function (t, r) {
@@ -119,9 +125,6 @@ console.log("Widget");
                     },
                     buffer: [],
                 };
-                s.async = 1;
-                s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js";
-                t.insertBefore(s, c);
 
                
                 if(e['StorefrontSDK']){
@@ -133,7 +136,7 @@ console.log("Widget");
             
             SDK_loaded=true;
             
-            StorefrontSDK.executeCommand("renderFloatingButton", {
+            /*StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: data._businessID,
                 buttonText: data._buttonText,
                 position: style_data._buttonPosition,
@@ -143,7 +146,7 @@ console.log("Widget");
                 floatingBar: style_data.booleans._floatingBar,
                 backgroundColor: style_data.colors._floatingBarColor.value,
                 urlParams: { utm_medium: "wix_app" },
-            });
+            });*/
 
             /*StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: 1234,
