@@ -32,11 +32,12 @@ console.log("Widget");
             console.log("----------------------------------------------------------"); 
             console.log("---------------------PUBLIC DATA : WIDGET---------------"); 
             data={}; count=0; style_data=false; editor=true; 
-            loadPublicData();
-            console.log("extend");  
-            data=$.extend( data, update );
-            console.log(data);   
-            loadStyleData();   
+            loadPublicData();        
+            loadStyleData();
+            $.each(update, function(i, v){
+                if(i=="_buttonPosition") {_buttonAlignment(v);}
+                else if(i=="_buttonAlignment") {_buttonAlignment(v);}
+            })           
             console.log(update);            
             console.log(data);     
         }
@@ -57,28 +58,32 @@ console.log("Widget");
         function loadStyleData(){         
             Wix.Styles.getStyleParams(style => {
                 style_data=style;
-                console.log(style);
-                if(style_data.numbers._buttonAlignment==1){
-                    style_data._buttonAlignment='left';
-                }else if(style_data.numbers._buttonAlignment==2){
-                    style_data._buttonAlignment='center';
-                }else if(style_data.numbers._buttonAlignment==3){
-                    style_data._buttonAlignment='right';
-                }else{
-                    style_data._buttonAlignment='';
-                }
-
-                if(style_data.numbers._buttonPosition==1){
-                    style_data._buttonPosition='top';
-                }else if(style_data.numbers._buttonPosition==2){
-                    style_data._buttonPosition='bottom';
-                }else{
-                    style_data._buttonPosition='';
-                }
+                console.log(style);                
+                _buttonAlignment(style_data.numbers._buttonAlignment);
+                _buttonPosition(style_data.numbers._buttonPosition);
                 run();            
             });
         }
-
+        function _buttonAlignment(v){             
+            var v_='';         
+            if(v==1){
+                v_='left';
+            }else if(v==2){
+                v_='center';
+            }else if(v==3){
+                v_='right';
+            }
+            style_data._buttonAlignment=v_;
+        } 
+        function _buttonPosition(v){             
+            var v_='';  
+            if(v==1){
+               v_='top';
+            }else if(v==2){
+                v_='bottom';
+            }
+            style_data._buttonPosition=v_';
+        } 
         function run(){  
             console.log(data);          
             if(count==2 && style_data)  {
