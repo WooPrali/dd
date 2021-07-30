@@ -76,9 +76,9 @@ console.log("Widget");
         function run(){  
             console.log(data);          
             if(count==2 && style_data)  {
-                console.log("Widget STYLE DATA");
+                //console.log("Widget STYLE DATA");
                 console.log(style_data);
-                console.log("Widget DATA");
+                //console.log("Widget DATA");
                 console.log(data);
                 create();
             }
@@ -101,6 +101,7 @@ console.log("Widget");
         function create(){           
             //if(typeof StorefrontSDK == "undefined"){
                 !(function (e, t, r, n) {
+                    console.log("SDK SCRIPT | WIDGET");
                     var o, c, s;
                     (o = e.document),
                         (c = t.children[0]),
@@ -108,6 +109,7 @@ console.log("Widget");
                         (e.StorefrontSDKObject = "StorefrontSDK"),
                         (e[e.StorefrontSDKObject] = {
                             executeCommand: function (t, r) {
+                                console.log("SDK EXECUTE | WIDGET");
                                 e[e.StorefrontSDKObject].buffer.push([t, r]);
                             },
                             buffer: [],
