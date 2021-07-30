@@ -97,41 +97,28 @@ console.log("Widget");
                 console.log(data);
                 create();
             }
-        }  
-
-        
-
-        /*
-        console.log( "Wix.Styles");
-        console.log( Wix.Styles);
-        $('.navtohome').click(() => {
-            Wix.getSiteMap(pages => {
-            Wix.navigateToPage(pages[0].pageId.substring(1));
-            });
-            console.log('navigated');
-        });
-        */
-        
+        }       
         
         function create(){           
             //if(typeof StorefrontSDK == "undefined"){
                 !(function (e, t, r, n) {
                     console.log("SDK SCRIPT | WIDGET");
                     var o, c, s;
-                    (o = e.document),
-                        (c = t.children[0]),
-                        (s = o.createElement("script")),
-                        (e.StorefrontSDKObject = "StorefrontSDK"),
-                        (e[e.StorefrontSDKObject] = {
-                            executeCommand: function (t, r) {
-                                console.log("SDK EXECUTE | WIDGET");
-                                e[e.StorefrontSDKObject].buffer.push([t, r]);
-                            },
-                            buffer: [],
-                        }),
-                        (s.async = 1),
-                        (s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js"),
-                        t.insertBefore(s, c);
+                    o = e.document;
+                    
+                    (c = t.children[0]),
+                    (s = o.createElement("script")),
+                    (e.StorefrontSDKObject = "StorefrontSDK"),
+                    (e[e.StorefrontSDKObject] = {
+                        executeCommand: function (t, r) {
+                            console.log("SDK EXECUTE | WIDGET");
+                            e[e.StorefrontSDKObject].buffer.push([t, r]);
+                        },
+                        buffer: [],
+                    }),
+                    (s.async = 1),
+                    (s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js"),
+                    t.insertBefore(s, c);
                 })(window, document.head); 
                 SDK_loaded=true;
             //}
