@@ -10,7 +10,8 @@ console.log("Widget");
         console.log('Widget Ready');            
         console.log('Widget Next');        
 
-        loadData();
+        loadPublicData();
+        loadStyleData();
 
         Wix.addEventListener(Wix.Events.SETTINGS_UPDATED, onSettingsUpdate);
         // You can get the style params programmatically, un-comment the following snippet to see how it works:
