@@ -151,13 +151,13 @@ console.log("Widget");
                 console.log("SDK EXISTS");
                 console.log(window['StorefrontSDK']);
                 var SDK_=window['StorefrontSDK'];
-                if(SDK_['executeCmd']){
+                if(SDK_['executeCommand']){
                     console.log("SDK FIRST");
-                    SDK_['executeCmd']("renderFloatingButton", prop);
-                }else  if(SDK_['executeCommand']){
-                    console.log("SDK NEXT");
                     SDK_['executeCommand']("renderFloatingButton", prop);
-                }               
+                } else if(SDK_['executeCmd']){
+                    console.log("SDK NEXT");
+                    SDK_['executeCmd']("renderFloatingButton", prop);
+                }           
             }  
 
             /*StorefrontSDK.executeCommand("renderFloatingButton", {
