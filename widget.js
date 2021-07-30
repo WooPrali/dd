@@ -1,5 +1,6 @@
 var SDK_loaded=false;
-var data={}; count=0; style_data=false; editor=false;     
+var data={}, count=0, style_data=false, editor=false;  
+var sdk=false;
 
 console.log("Widget");
 
@@ -31,7 +32,7 @@ console.log("Widget");
         function onPublicUpdate(update) {        
             console.log("----------------------------------------------------------"); 
             console.log("---------------------PUBLIC DATA : WIDGET---------------"); 
-            data={}; count=0; style_data=false; editor=true; 
+            data={}; count=0; style_data=false; editor=true;  
             loadPublicData();        
             loadStyleData();
             $.each(update, function(i, v){
