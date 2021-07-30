@@ -127,15 +127,17 @@ console.log("Widget");
                 };
 
                
-                if(e['StorefrontSDK']){
-                    console.log("SDK EXISTS");
-                    console.log(e['StorefrontSDK']);
-                }   
+                 
 
             })(window, document.head); 
             
             SDK_loaded=true;
-            
+
+            if(window['StorefrontSDK']){
+                console.log("SDK EXISTS");
+                console.log(e['StorefrontSDK']);
+            }  
+
             /*StorefrontSDK.executeCommand("renderFloatingButton", {
                 businessId: data._businessID,
                 buttonText: data._buttonText,
