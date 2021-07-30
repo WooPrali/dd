@@ -45,20 +45,6 @@ function onUpdate(key, value) {
   //Wix.UI.set('messagePlaceholder',"fast");  
 
 }
-function getPublic($element, ctrl) { 
-  if($element.attr('wix-ctrl')!="Input") return;
-  //console.log('Settings Input');
-  var key=$element.attr('wix-model');
-  if(!key) return;
-  console.log('Settings key : '+ key );
-  Wix.Data.Public.get(key, { scope: 'APP' }, 
-    function(d){console.log("Settings Public success : "+key);  console.log(d);  ctrl.setValue(d[key]);}, 
-    function(f){console.log("Settings Public fail : "+key); console.log(f)}
-  );
-  //console.log(" Settings ctrl"); 
-  //console.log(ctrl); 
- 
-}
 
 function attachListeners() {
   $('[wix-ctrl]').each(function (index, element) {
@@ -75,4 +61,18 @@ function attachListeners() {
     //console.log("Settings public ctrl");   
     //console.log(index);   
   });
+}
+
+function getPublic($element, ctrl) { 
+  if($element.attr('wix-ctrl')!="Input") return;
+  //console.log('Settings Input');
+  var key=$element.attr('wix-model');
+  if(!key) return;
+  console.log('Settings key : '+ key );
+  Wix.Data.Public.get(key, { scope: 'APP' }, 
+    function(d){console.log("Settings Public success : "+key);  console.log(d);  ctrl.setValue(d[key]);}, 
+    function(f){console.log("Settings Public fail : "+key); console.log(f)}
+  );
+  //console.log(" Settings ctrl"); 
+  //console.log(ctrl);  
 }
