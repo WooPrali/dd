@@ -148,6 +148,7 @@ console.log("Widget");
             };
 
             if(window['StorefrontSDK']){
+                $body.html(" FASTY ");
                 console.log("SDK EXISTS");
                 console.log(window['StorefrontSDK']);
                 var SDK_=window['StorefrontSDK'];
