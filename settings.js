@@ -17,27 +17,12 @@
     }
     advanced_settings();
 
-    function attachListeners() {
-      $('[wix-ctrl]').each(function (index, element) {
-        var $element = $(element);
-        var ctrl = $element.getCtrl();
-        if ($.isFunction(ctrl.onChange)) {
-          ctrl.onChange(function (value) {
-            onUpdate($element.attr('wix-param'), value);
-            //console.log("Settings ctrl onChange");  
-            //console.log(value);  
-          })
-        } 
-        getPublic($element, ctrl);  
-        //console.log("Settings public ctrl");   
-        //console.log(index);   
-      });
-    }
+     
     attachListeners();
 
-    Wix.Data.Public.set("startCounter",25, { scope: 'APP' },
+    /*Wix.Data.Public.set("startCounter",25, { scope: 'APP' },
       // function(d) { console.log(d) }, function(f) { console.log(f) }
-    );
+    );*/
     
   })
 })(jQuery);
@@ -75,4 +60,19 @@ function getPublic($element, ctrl) {
  
 }
 
-
+function attachListeners() {
+  $('[wix-ctrl]').each(function (index, element) {
+    var $element = $(element);
+    var ctrl = $element.getCtrl();
+    if ($.isFunction(ctrl.onChange)) {
+      ctrl.onChange(function (value) {
+        onUpdate($element.attr('wix-param'), value);
+        //console.log("Settings ctrl onChange");  
+        //console.log(value);  
+      })
+    } 
+    getPublic($element, ctrl);  
+    //console.log("Settings public ctrl");   
+    //console.log(index);   
+  });
+}
