@@ -47,7 +47,7 @@ function onUpdate(key, value) {
 }
 function getPublic($element, ctrl) { 
   if($element.attr('wix-ctrl')!="Input") return;
-  console.log('Settings Input');
+  //console.log('Settings Input');
   var key=$element.attr('wix-model');
   if(!key) return;
   console.log('Settings key');
