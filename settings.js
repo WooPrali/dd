@@ -57,8 +57,8 @@ function getPublic($element, ctrl) {
     function(d){console.log("Settings Public success "+key);  console.log(d);  ctrl.setValue(d[key]);}, 
     function(f){console.log("Settings Public fail "+key);console.log(f)}
   );
-  console.log(" Settings ctrl"); 
-  console.log(ctrl); 
+  //console.log(" Settings ctrl"); 
+  //console.log(ctrl); 
  
 }
 
@@ -69,12 +69,12 @@ function attachListeners() {
     if ($.isFunction(ctrl.onChange)) {
       ctrl.onChange(function (value) {
         onUpdate($element.attr('wix-param'), value);
-        console.log("Settings ctrl onChange");  
-        console.log(value);  
+        //console.log("Settings ctrl onChange");  
+        //console.log(value);  
       })
     } 
     getPublic($element, ctrl);  
-    console.log("Settings public ctrl");   
-    console.log(index);   
+    //console.log("Settings public ctrl");   
+    //console.log(index);   
   });
 }
