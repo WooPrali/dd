@@ -1,6 +1,6 @@
 var SDK_loaded=false;
 var data={}, count=0, style_data=false, editor=false;  
-var sdk=false;
+var SDK=false;
 
 console.log("Widget");
 
@@ -33,6 +33,7 @@ console.log("Widget");
             console.log("----------------------------------------------------------"); 
             console.log("---------------------PUBLIC DATA : WIDGET---------------"); 
             data={}; count=0; style_data=false; editor=true;  
+            console.log("SDK"); console.log(SDK);
             loadPublicData();        
             loadStyleData();
             $.each(update, function(i, v){
@@ -100,10 +101,15 @@ console.log("Widget");
             }
         }       
         
-        function create(){           
-            
+        function create(){ 
+           
             !(function (e, t, r, n) {
                 console.log("SDK SCRIPT 2| WIDGET");
+                if(e['StorefrontSDK']){
+                    console.log("SDK EXISTS");
+                    console.log(e['StorefrontSDK']);
+                }          
+            
                 var o, c, s;
                 o = e.document;
 
