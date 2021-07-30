@@ -50,11 +50,13 @@ function attachListeners() {
 function onUpdate(key, value) { 
   //Wix.Settings.triggerSettingsUpdatedEvent({key: key, value: value});
   //Wix.Settings.triggerSettingsUpdatedEvent({key: key+'Fast', value: "123456"});
-  console.log(key);
-  console.log(value);
-  console.log(Wix);
+  //console.log(key);
+  //console.log(value);
+  //console.log(Wix);
+  console.log("Settings : "+key+" : "+ value);
   Wix.Data.Public.set(key, value, { scope: 'APP' },
-       function(d) { console.log(d) }, function(f) { console.log(f) }
+       function(d) { console.log(d) }, 
+       function(f) { console.log(f) }
   );
   //Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 0});
   Wix.Styles.getStyleParams(style => {
