@@ -28,10 +28,11 @@ console.log("Widget");
         Wix.addEventListener(Wix.Events.PUBLIC_DATA_CHANGED, onPublicUpdate); 
 
         function onPublicUpdate(update) {        
-            console.log("Widget Upblic Update");
-            console.log(update);          
+            console.log("----------------------------------------------------------"); 
+            console.log("---------------------PUBLIC DATA : WIDGET---------------");   
+            console.log(update);
+            showData();         
         }
-
       
         // You can also get the style every time it changes, try this:
         Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
@@ -43,7 +44,17 @@ console.log("Widget");
             //loadData();
         });
 
-
+        function showData(){
+            Wix.Data.Public.set(key, value, { scope: 'APP' },
+                function(d) { console.log("Public : "+key);  console.log(d) }, 
+                function(f) { console.log(f) }
+            );
+            //Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 0});
+            Wix.Styles.getStyleParams(style => {
+                console.log("All styles");
+                console.log(style);
+            });  
+        }
 
         function loadData(){
             // Wix.Data.Public.get("startCounter", { scope: 'APP' }, function(d){console.log(d); data.counter=d.startCounter; run();}, function(f){console.log(f)});
@@ -83,6 +94,8 @@ console.log("Widget");
                 create();
             }
         }  
+
+        
 
         /*
         console.log( "Wix.Styles");
