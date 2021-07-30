@@ -48,15 +48,16 @@ function onUpdate(key, value) {
 }
 function getPublic($element, ctrl) { 
   if($element.attr('wix-ctrl')!="Input") return;
-  console.log('Input');
+  console.log('Widget Input');
   var key=$element.attr('wix-model');
   if(!key) return;
-  console.log('key');
+  console.log('Widget key');
   console.log(key);   
   Wix.Data.Public.get(key, { scope: 'APP' }, 
     function(d){console.log(d);  ctrl.setValue(d[key]);}, 
     function(f){console.log(f)}
   );
+  console.log(" widget ctrl"); 
   console.log(ctrl); 
  
 }

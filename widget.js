@@ -7,8 +7,8 @@ console.log("Widget");
 (function($){
     $(document).ready(function(){
         var $body=$("body");
-        console.log('Ready');            
-        console.log('Next');        
+        console.log('Widget Ready');            
+        console.log('Widget Next');        
 
         loadData();
 
@@ -29,7 +29,7 @@ console.log("Widget");
       
         // You can also get the style every time it changes, try this:
         Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, style => {
-            console.log("Style Update");
+            console.log("Widget Style Update");
             console.log(style);
             data={}; count=0; style_data=false; editor=true; 
             //$body.html(" ");        
@@ -69,7 +69,7 @@ console.log("Widget");
         function run(){  
             console.log(data);          
             if(count==2 && style_data)  {
-                console.log("DATA");
+                console.log("Widget DATA");
                 console.log(style_data);
                 console.log(data);
                 create();
@@ -134,5 +134,5 @@ console.log("Widget");
         }
        
     });
-    console.log('jQuery');
+    console.log('Widget jQuery');
 })(jQuery);
