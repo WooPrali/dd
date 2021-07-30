@@ -52,8 +52,8 @@ function getPublic($element, ctrl) {
   if(!key) return;
   console.log('Settings key : '+ key );
   Wix.Data.Public.get(key, { scope: 'APP' }, 
-    function(d){console.log("Settings Public success "+key);  console.log(d);  ctrl.setValue(d[key]);}, 
-    function(f){console.log("Settings Public fail "+key);console.log(f)}
+    function(d){console.log("Settings Public success : "+key);  console.log(d);  ctrl.setValue(d[key]);}, 
+    function(f){console.log("Settings Public fail : "+key); console.log(f)}
   );
   //console.log(" Settings ctrl"); 
   //console.log(ctrl); 
