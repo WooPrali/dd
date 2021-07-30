@@ -25,6 +25,12 @@ console.log("Widget");
             //data={}; count=0; style_data=false; editor=true;         
             //loadData();
         }
+        Wix.addEventListener(Wix.Events.PUBLIC_DATA_CHANGED, onPublicUpdate); 
+
+        function onPublicUpdate(update) {        
+            console.log("Widget Upblic Update");
+            console.log(update);          
+        }
 
       
         // You can also get the style every time it changes, try this:
