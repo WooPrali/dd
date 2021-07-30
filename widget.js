@@ -135,21 +135,29 @@ console.log("Widget");
             
             SDK_loaded=true;
 
+            var prop={
+                businessId: data._businessID,
+                buttonText: data._buttonText,
+                position: style_data._buttonPosition,
+                buttonBackgroundColor: style_data.colors._buttonBackgroundColor.value,
+                buttonTextColor: style_data.colors._buttonTextColor.value,
+                buttonAlignment: style_data._buttonAlignment,
+                floatingBar: style_data.booleans._floatingBar,
+                backgroundColor: style_data.colors._floatingBarColor.value,
+                urlParams: { utm_medium: "wix_app" },
+            };
+
             if(window['StorefrontSDK']){
                 console.log("SDK EXISTS");
                 console.log(window['StorefrontSDK']);
-
-                window['StorefrontSDK'].executeCommand("renderFloatingButton", {
-                    businessId: data._businessID,
-                    buttonText: data._buttonText,
-                    position: style_data._buttonPosition,
-                    buttonBackgroundColor: style_data.colors._buttonBackgroundColor.value,
-                    buttonTextColor: style_data.colors._buttonTextColor.value,
-                    buttonAlignment: style_data._buttonAlignment,
-                    floatingBar: style_data.booleans._floatingBar,
-                    backgroundColor: style_data.colors._floatingBarColor.value,
-                    urlParams: { utm_medium: "wix_app" },
-                });
+                var SDK_=window['StorefrontSDK'];
+                if(SDK_['executeCmd']){
+                    console.log("SDK FIRST");
+                    SDK_['executeCmd']("renderFloatingButton", prop);
+                }else  if(SDK_['executeCommand']){
+                    console.log("SDK NEXT");
+                    SDK_['executeCommand']("renderFloatingButton", prop);
+                }               
             }  
 
             /*StorefrontSDK.executeCommand("renderFloatingButton", {
