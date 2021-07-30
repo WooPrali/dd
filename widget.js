@@ -104,11 +104,7 @@ console.log("Widget");
         function create(){ 
            
             !(function (e, t, r, n) {
-                console.log("SDK SCRIPT 2| WIDGET");
-                if(e['StorefrontSDK']){
-                    console.log("SDK EXISTS");
-                    console.log(e['StorefrontSDK']);
-                }          
+                console.log("SDK SCRIPT 2| WIDGET");   
             
                 var o, c, s;
                 o = e.document;
@@ -126,6 +122,12 @@ console.log("Widget");
                 s.async = 1;
                 s.src = "https://web-apps.cdn4dd.com/webapps/sdk-storefront/latest/sdk.js";
                 t.insertBefore(s, c);
+
+               
+                if(e['StorefrontSDK']){
+                    console.log("SDK EXISTS");
+                    console.log(e['StorefrontSDK']);
+                }   
 
             })(window, document.head); 
             
