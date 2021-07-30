@@ -102,10 +102,10 @@ console.log("Widget");
         function create(){           
             //if(typeof StorefrontSDK == "undefined"){
                 !(function (e, t, r, n) {
-                    console.log("SDK SCRIPT | WIDGET");
+                    console.log("SDK SCRIPT 2| WIDGET");
                     var o, c, s;
                     o = e.document;
-                    
+
                     (c = t.children[0]),
                     (s = o.createElement("script")),
                     (e.StorefrontSDKObject = "StorefrontSDK"),
