@@ -23,7 +23,7 @@
 
 
    Wix.Data.Public.set("startCounter",25, { scope: 'APP' },
-        function(d) { console.log(d) }, function(f) { console.log(f) }
+       // function(d) { console.log(d) }, function(f) { console.log(f) }
    );
     
   })
