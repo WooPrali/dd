@@ -48,16 +48,16 @@ function onUpdate(key, value) {
 }
 function getPublic($element, ctrl) { 
   if($element.attr('wix-ctrl')!="Input") return;
-  console.log('Widget Input');
+  console.log('Settings Input');
   var key=$element.attr('wix-model');
   if(!key) return;
-  console.log('Widget key');
+  console.log('Settings key');
   console.log(key);   
   Wix.Data.Public.get(key, { scope: 'APP' }, 
-    function(d){console.log(d);  ctrl.setValue(d[key]);}, 
-    function(f){console.log(f)}
+    function(d){console.log("Settings Public success "+key);  console.log(d);  ctrl.setValue(d[key]);}, 
+    function(f){console.log("Settings Public fail "+key);console.log(f)}
   );
-  console.log(" widget ctrl"); 
+  console.log(" Settings ctrl"); 
   console.log(ctrl); 
  
 }
@@ -72,7 +72,7 @@ function attachListeners() {
       })
     } 
     getPublic($element, ctrl);  
-    console.log("ctrl");   
+    console.log("Settings ctrl");   
     //console.log(ctrl);   
   });
 }
