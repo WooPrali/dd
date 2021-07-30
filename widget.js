@@ -35,7 +35,7 @@ console.log("Widget");
             loadPublicData();        
             loadStyleData();
             $.each(update, function(i, v){
-                if(i=="_buttonPosition") {_buttonAlignment(v);}
+                if(i=="_buttonPosition") {_buttonPosition(v);}
                 else if(i=="_buttonAlignment") {_buttonAlignment(v);}
                 console.log("update: "+i+' : '+v); 
                 console.log(style_data);    
