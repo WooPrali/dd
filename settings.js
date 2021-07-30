@@ -39,6 +39,7 @@ function onUpdate(key, value) {
   );
   //Wix.Settings.triggerSettingsUpdatedEvent({key: 'dropdown2', value: 0});
   Wix.Styles.getStyleParams(style => {
+    console.log("Settings style update");
     console.log(style);
   });  
   //Wix.UI.set('messagePlaceholder',"fast");  
