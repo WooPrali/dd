@@ -15,18 +15,33 @@
         }       
       });  
     }
-    advanced_settings();
 
-     
+    advanced_settings();
     attachListeners();
 
     /*Wix.Data.Public.set("startCounter",25, { scope: 'APP' },
       // function(d) { console.log(d) }, function(f) { console.log(f) }
-    );*/
-    
+    );*/    
   })
 })(jQuery);
 
+
+function attachListeners() {
+  $('[wix-ctrl]').each(function (index, element) {
+    var $element = $(element);
+    var ctrl = $element.getCtrl();
+
+    getPublic($element, ctrl);  
+    
+    if ($.isFunction(ctrl.onChange)) {
+      ctrl.onChange(function (value) {
+        onUpdate($element.attr('wix-param'), value);
+        //console.log("Settings ctrl onChange");  console.log(value);  
+      })
+    }     
+    //console.log("Settings public ctrl"); console.log(index);   
+  });
+}
 
 function onUpdate(key, value) { 
   //Wix.Settings.triggerSettingsUpdatedEvent({key: key, value: value});
@@ -43,24 +58,6 @@ function onUpdate(key, value) {
     console.log(style);
   });  
   //Wix.UI.set('messagePlaceholder',"fast");  
-
-}
-
-function attachListeners() {
-  $('[wix-ctrl]').each(function (index, element) {
-    var $element = $(element);
-    var ctrl = $element.getCtrl();
-    if ($.isFunction(ctrl.onChange)) {
-      ctrl.onChange(function (value) {
-        onUpdate($element.attr('wix-param'), value);
-        //console.log("Settings ctrl onChange");  
-        //console.log(value);  
-      })
-    } 
-    getPublic($element, ctrl);  
-    //console.log("Settings public ctrl");   
-    //console.log(index);   
-  });
 }
 
 function getPublic($element, ctrl) { 
@@ -73,6 +70,5 @@ function getPublic($element, ctrl) {
     function(d){console.log("Settings Public success : "+key);  console.log(d);  ctrl.setValue(d[key]);}, 
     function(f){console.log("Settings Public fail : "+key); console.log(f)}
   );
-  //console.log(" Settings ctrl"); 
-  //console.log(ctrl);  
+  //console.log(" Settings ctrl"); console.log(ctrl);  
 }
