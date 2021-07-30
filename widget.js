@@ -137,7 +137,7 @@ console.log("Widget");
 
             if(window['StorefrontSDK']){
                 console.log("SDK EXISTS");
-                console.log(e['StorefrontSDK']);
+                console.log(window['StorefrontSDK']);
             }  
 
             /*StorefrontSDK.executeCommand("renderFloatingButton", {
