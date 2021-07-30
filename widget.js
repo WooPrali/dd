@@ -82,7 +82,7 @@ console.log("Widget");
             }else if(v==2){
                 v_='bottom';
             }
-            style_data._buttonPosition=v_';
+            style_data._buttonPosition=v_;
         } 
         function run(){  
             console.log(data);          
