@@ -158,7 +158,9 @@ console.log("Widget");
                 } else if(SDK_['executeCmd']){
                     console.log("SDK NEXT");
                     SDK_['executeCmd']("renderFloatingButton", prop);
-                }           
+                } 
+                var $btn=  $body.find("a");   
+                console.log($btn.html());    
             }  
 
             /*StorefrontSDK.executeCommand("renderFloatingButton", {
