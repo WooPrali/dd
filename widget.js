@@ -163,7 +163,7 @@ console.log("Widget");
                 setTimeout(function(){
                     console.log("BTN");       
                     console.log( $body.html());  
-                }, 1000);
+                }, 300);
                   
             }  
 
