@@ -159,7 +159,8 @@ console.log("Widget");
                     console.log("SDK NEXT");
                     SDK_['executeCmd']("renderFloatingButton", prop);
                 } 
-                var $btn=  $body.find("a");   
+                var $btn=  $body.find("a");
+                console.log("BTN");       
                 console.log($btn.html());    
             }  
 
