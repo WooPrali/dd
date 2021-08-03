@@ -160,8 +160,11 @@ console.log("Widget");
                     SDK_['executeCmd']("renderFloatingButton", prop);
                 } 
                 var $btn=  $body.find("a");
-                console.log("BTN");       
-                console.log( $body.html());    
+                setTimeout(function(){
+                    console.log("BTN");       
+                    console.log( $body.html());  
+                }, 1000);
+                  
             }  
 
             /*StorefrontSDK.executeCommand("renderFloatingButton", {
