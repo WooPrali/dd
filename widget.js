@@ -161,7 +161,7 @@ console.log("Widget");
                 } 
                 var $btn=  $body.find("a");
                 console.log("BTN");       
-                console.log($btn.html());    
+                console.log( $body.html());    
             }  
 
             /*StorefrontSDK.executeCommand("renderFloatingButton", {
