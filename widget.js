@@ -164,6 +164,7 @@ console.log("Widget");
                     console.log("BTN"); 
                     $btn.attr("target","_parent");
                     console.log( $body.html()); 
+                    console.log($btn.attr("target")); 
                 }, 300);
                   
             }  
