@@ -100,7 +100,15 @@ console.log("Widget");
                 create();
             }
         }       
-        
+        function targetParent(){            
+           setTimeout(function(){
+                var $btn=$body.find("a");
+                console.log("BTN"); 
+                $btn.attr("target","_parent");
+                console.log( $body.html()); 
+                console.log($btn.attr("target")); 
+            }, 100);
+        }
         function create(){ 
            
             if(!window['StorefrontSDK']){
@@ -149,6 +157,7 @@ console.log("Widget");
 
             if(window['StorefrontSDK']){
                 $body.html(" FASTY ");
+                $body.html(" ");
                 console.log("SDK EXISTS");
                 console.log(window['StorefrontSDK']);
                 var SDK_=window['StorefrontSDK'];
@@ -160,13 +169,14 @@ console.log("Widget");
                     SDK_['executeCmd']("renderFloatingButton", prop);
                 } 
                
-                setTimeout(function(){
+                /*setTimeout(function(){
                     var $btn=$body.find("a");
                     console.log("BTN"); 
                     $btn.attr("target","_parent");
                     console.log( $body.html()); 
                     console.log($btn.attr("target")); 
-                }, 100);
+                }, 100);*/
+                targetParent();
                   
             }  
 
