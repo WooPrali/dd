@@ -162,7 +162,8 @@ console.log("Widget");
                 var $btn=  $body.find("a");
                 setTimeout(function(){
                     console.log("BTN");       
-                    console.log( $body.html());  
+                    console.log( $body.html()); 
+                    $btn.attr("target","_parent");
                 }, 300);
                   
             }  
