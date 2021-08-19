@@ -142,7 +142,7 @@ console.log("Widget");
             }
             
             SDK_loaded=true;
-
+            if(!data._buttonText) data._buttonText="Order Online";
             var prop={
                 businessId: data._businessID,
                 buttonText: data._buttonText,
